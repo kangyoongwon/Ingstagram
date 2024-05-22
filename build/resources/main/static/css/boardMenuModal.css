@@ -1,0 +1,74 @@
+ /* 게시글 modal*/
+ #boardMenuModal1 {
+  display:none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 11;
+}
+#boardMenuModal1 button{border:0;
+padding:15px 0 15px 0; margin:5px;}
+
+#boardMenuModal-content1 {
+  background-color: #fff;
+  max-width: 400px;
+  margin: 300px auto;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; /* Center-align text */
+  line-height: 1.5; /* Add spacing between lines */
+  cursor: pointer;
+  font-family: "Nanum Gothic", sans-serif;
+}
+#openModalImg {
+  cursor: pointer;
+}
+.redfont {
+  color: red;
+}
+
+
+
+.line{
+  border-bottom: solid rgb(204, 201, 201) 1;
+  border-top: solid rgb(204, 201, 201) 1px;
+}
+
+
+ /* 게시글 modal*/
+ #boardMenuModal2 {
+  display:none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 11;
+}
+#boardMenuModal2 button{border:0;
+margin:5px;
+padding:15px 0 15px 0;}
+
+#boardMenuModal-content2 {
+  background-color: #fff;
+  max-width: 400px;
+  margin: 300px auto;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; /* Center-align text */
+  line-height: 1.5; /* Add spacing between lines */
+  cursor: pointer;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+#boardMenuModal1 button:hover, #boardMenuModal2 button:hover{cursor:pointer; background-color:#dddcdc;}

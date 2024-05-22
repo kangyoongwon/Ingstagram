@@ -1,0 +1,53 @@
+.modal1 {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0); /* 배경색상을 확인하세요 */
+    z-index: 1000;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  .modal-content1 {
+    width: 220px;
+    height: auto;
+    border-radius: 5px;
+    position: absolute;
+    padding:0 20px 0 20px;
+    left:80px; /* 왼쪽 정렬 */
+    bottom:70px; /* 아래 정렬 */
+    /* display: inline-flex; */
+    box-shadow:0px 0px 5px #444;
+    background-color:white;
+    display:flex;
+  }
+  
+  #openModalImg1 {
+    cursor: pointer;
+  }
+  .modal-content1 img{
+    width: 25px;
+    height: 25px;
+    
+  }
+  .modal-content1 span{
+    font-size: 17px;
+    font-family: "Nanum Gothic", sans-serif;
+    cursor: pointer;
+    
+  }
+  .modal-content1 img,
+  .modal-content1 span {
+    vertical-align: middle;
+  }
+  .modal-content1 span:hover {
+    background-color: lightgray; /* 마우스를 올렸을 때 변경할 배경색 */
+  }
+
+  .modal1 button{background-color:transparent; border:0}
+
+  #navModalLogout, #navModalSettings{padding:10px 0 10px 0; border-radius:5px; width:220px;}
+  #navModalLogout:hover, #navModalSettings:hover{background-color:rgb(231, 231, 231);}

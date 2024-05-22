@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="team2.ingstagram.service.HashtagServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-27T03:53:48" hostname="DESKTOP-BB86QO2" time="1.672">
+  <properties/>
+  <testcase name="testGetHashtagBoardList()" classname="team2.ingstagram.service.HashtagServiceImplTest" time="1.672"/>
+  <system-out><![CDATA[12:53:42.209 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [team2.ingstagram.service.HashtagServiceImplTest]: HashtagServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:53:42.338 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration team2.ingstagram.IngstagramApplication for test class team2.ingstagram.service.HashtagServiceImplTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-27T12:53:42.769+09:00  INFO 27604 --- [ingstagram] [    Test worker] t.i.service.HashtagServiceImplTest       : Starting HashtagServiceImplTest using Java 17.0.6 with PID 27604 (started by kyk83 in D:\KYG\SpringBoot\ingstagram)
+2024-04-27T12:53:42.771+09:00  INFO 27604 --- [ingstagram] [    Test worker] t.i.service.HashtagServiceImplTest       : No active profile set, falling back to 1 default profile: "default"
+2024-04-27T12:53:43.558+09:00  INFO 27604 --- [ingstagram] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-27T12:53:43.678+09:00  INFO 27604 --- [ingstagram] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 13 JPA repository interfaces.
+2024-04-27T12:53:44.313+09:00  INFO 27604 --- [ingstagram] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-27T12:53:44.382+09:00  INFO 27604 --- [ingstagram] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-27T12:53:44.419+09:00  INFO 27604 --- [ingstagram] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-27T12:53:44.705+09:00  INFO 27604 --- [ingstagram] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-27T12:53:44.738+09:00  INFO 27604 --- [ingstagram] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-27T12:53:45.089+09:00  INFO 27604 --- [ingstagram] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@18d610e1
+2024-04-27T12:53:45.091+09:00  INFO 27604 --- [ingstagram] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-27T12:53:45.200+09:00  WARN 27604 --- [ingstagram] [    Test worker] org.hibernate.dialect.Dialect            : HHH000511: The 12.2.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2024-04-27T12:53:46.370+09:00  INFO 27604 --- [ingstagram] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-27T12:53:46.374+09:00  INFO 27604 --- [ingstagram] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-27T12:53:46.825+09:00  INFO 27604 --- [ingstagram] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-04-27T12:53:47.589+09:00  WARN 27604 --- [ingstagram] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-27T12:53:47.785+09:00  INFO 27604 --- [ingstagram] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-04-27T12:53:48.116+09:00  INFO 27604 --- [ingstagram] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2024-04-27T12:53:48.119+09:00  INFO 27604 --- [ingstagram] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@38503309]]
+2024-04-27T12:53:48.120+09:00  INFO 27604 --- [ingstagram] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2024-04-27T12:53:48.131+09:00  INFO 27604 --- [ingstagram] [    Test worker] t.i.service.HashtagServiceImplTest       : Started HashtagServiceImplTest in 5.612 seconds (process running for 6.837)
+
+Hibernate: select t1_0.tagid,t1_0.id,t1_0.content from tag t1_0 where t1_0.content=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+Hibernate: select b1_0.id,b1_0.content,b1_0.parentid,b1_0.rdate,b1_0.structure,b1_0.username from board b1_0 where b1_0.id=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select b1_0.blockid,b1_0.blocked,b1_0.blocker from block b1_0 where b1_0.blocked=? and b1_0.blocker=?
+Hibernate: select m1_0.username,m1_0.activate,m1_0.bio,m1_0.birthdate,m1_0.email,m1_0.name,m1_0.password,m1_0.photo,m1_0.rdate,m1_0.sex from member m1_0 where m1_0.username=?
+Hibernate: select f1_0.followid,f1_0.follower,f1_0.following from follow f1_0 where f1_0.follower=? and f1_0.following=?
+Hibernate: select count(h1_0.heartid) from heart h1_0 where h1_0.id=?
+@@@@@@@@@@@@@@@@size : 64
+@@@@@@@@@@@@@@@@size : 64
+@@@@@@@@@@@@@@@@size : 28
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+Hibernate: select f1_0.filesid,f1_0.id,f1_0.path from files f1_0 where f1_0.id=?
+last size : 28
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@HashtagListDTO(hashtag=#코딩, hashtagDTOList=[HashtagDTO(board=Board(boardid=52, content=내용45<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=52, path=http://192.168.0.48:8080/videos/d905048d-eece-4424-b681-388cd798d0c6.mp4, boardid=52), heartCount=1), HashtagDTO(board=Board(boardid=70, content=내용1<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=70, path=http://192.168.0.48:8080/videos/3d310a30-d47b-4c96-a11d-e65bab03709a.mp4, boardid=70), heartCount=0), HashtagDTO(board=Board(boardid=71, content=내용2<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=71, path=http://192.168.0.48:8080/videos/c86067d4-fe9d-4696-9cd3-bd3a7b0dd359.mp4, boardid=71), heartCount=0), HashtagDTO(board=Board(boardid=72, content=내용3<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=72, path=http://192.168.0.48:8080/videos/8f07282f-8d55-4305-9844-9e5a39c8b9ec.mp4, boardid=72), heartCount=0), HashtagDTO(board=Board(boardid=73, content=내용4<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=73, path=http://192.168.0.48:8080/videos/90a62bff-5df9-40e8-a35d-64d5994a9009.mp4, boardid=73), heartCount=0), HashtagDTO(board=Board(boardid=74, content=내용5<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=74, path=http://192.168.0.48:8080/videos/4be1706c-0915-418d-88d1-421590c58e31.mp4, boardid=74), heartCount=0), HashtagDTO(board=Board(boardid=75, content=내용6<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=75, path=http://192.168.0.48:8080/videos/3093f799-739b-4213-bbe6-ec9d86e618d5.mp4, boardid=75), heartCount=0), HashtagDTO(board=Board(boardid=76, content=내용7<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=76, path=http://192.168.0.48:8080/videos/022027ff-a757-40d1-88db-75ab450ea700.mp4, boardid=76), heartCount=0), HashtagDTO(board=Board(boardid=77, content=내용8<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=77, path=http://192.168.0.48:8080/videos/ee1c1b6b-2b49-48cd-add7-fb4acf73da84.mp4, boardid=77), heartCount=0), HashtagDTO(board=Board(boardid=78, content=내용9<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=78, path=http://192.168.0.48:8080/videos/8b191c13-e564-42db-9bc1-66a364aedc33.mp4, boardid=78), heartCount=0), HashtagDTO(board=Board(boardid=79, content=내용10<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=79, path=http://192.168.0.48:8080/videos/dce311b5-1628-4926-86f2-c2f784ca118e.mp4, boardid=79), heartCount=0), HashtagDTO(board=Board(boardid=80, content=내용11<br><br>#코딩 #1분코딩 #html #javascript #requestAnimationFrame #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin11), files=Files(filesid=80, path=http://192.168.0.48:8080/videos/b094e694-c666-4933-acf7-f31ea7307324.mp4, boardid=80), heartCount=0), HashtagDTO(board=Board(boardid=8, content=내용1<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=8, path=http://192.168.0.48:8080/videos/03a9f912-553b-410f-a05e-ed8fcf8f268d.mp4, boardid=8), heartCount=0), HashtagDTO(board=Board(boardid=9, content=내용2<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=9, path=http://192.168.0.48:8080/videos/48b0cb54-3d88-4eb1-8dbb-35dfa9ced305.mp4, boardid=9), heartCount=0), HashtagDTO(board=Board(boardid=10, content=내용3<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=10, path=http://192.168.0.48:8080/videos/007e3bf1-e135-49cb-906f-4e6f5626da80.mp4, boardid=10), heartCount=0), HashtagDTO(board=Board(boardid=11, content=내용4<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=11, path=http://192.168.0.48:8080/videos/604d1d81-c6d7-4ae4-9c37-f37e75482257.mp4, boardid=11), heartCount=0), HashtagDTO(board=Board(boardid=12, content=내용5<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너<br><br>, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=12, path=http://192.168.0.48:8080/videos/bc99d1a8-2a30-469b-ac67-37de5d0b8535.mp4, boardid=12), heartCount=0), HashtagDTO(board=Board(boardid=13, content=내용6<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=13, path=http://192.168.0.48:8080/videos/a508a898-8e50-472a-ae05-ba65db98d68d.mp4, boardid=13), heartCount=0), HashtagDTO(board=Board(boardid=14, content=내용7<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=14, path=http://192.168.0.48:8080/videos/7d9fb302-256b-4164-b707-46a858088e8a.mp4, boardid=14), heartCount=0), HashtagDTO(board=Board(boardid=15, content=내용8<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=15, path=http://192.168.0.48:8080/videos/c1001940-ae40-4178-ada3-0c7ed2cbb636.mp4, boardid=15), heartCount=0), HashtagDTO(board=Board(boardid=16, content=내용9<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=16, path=http://192.168.0.48:8080/videos/329d27e7-52ec-431b-9a3a-02795dac0a20.mp4, boardid=16), heartCount=0), HashtagDTO(board=Board(boardid=17, content=내용10<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=17, path=http://192.168.0.48:8080/videos/32134d8d-b552-4b75-8a08-4f155ff3f2b9.mp4, boardid=17), heartCount=0), HashtagDTO(board=Board(boardid=18, content=내용11<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=18, path=http://192.168.0.48:8080/videos/96a7d502-3aa3-418a-9198-4a39a623046d.mp4, boardid=18), heartCount=0), HashtagDTO(board=Board(boardid=19, content=내용12<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=19, path=http://192.168.0.48:8080/videos/a9e4e760-7f6a-4792-9639-ee10492c26e5.mp4, boardid=19), heartCount=0), HashtagDTO(board=Board(boardid=20, content=내용13<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=20, path=http://192.168.0.48:8080/videos/0039f785-1a09-4597-b381-0ba87b6b2faa.mp4, boardid=20), heartCount=0), HashtagDTO(board=Board(boardid=21, content=내용 14<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=21, path=http://192.168.0.48:8080/videos/0a4b49d7-3334-4c36-8db8-895e25257c94.mp4, boardid=21), heartCount=0), HashtagDTO(board=Board(boardid=22, content=내용15<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=22, path=http://192.168.0.48:8080/videos/e81a0a37-3392-4ff6-a15e-be1417f37f20.mp4, boardid=22), heartCount=0), HashtagDTO(board=Board(boardid=23, content=내용16<br><br>#코딩 #1분코딩 #html #css #flexbox #grid #front_end #프론트엔드 #웹페이지 #웹사이트 #웹디자이너, rdate=2024-04-07, structure=0, parentid=-1, username=admin3), files=Files(filesid=23, path=http://192.168.0.48:8080/videos/6c4840c8-10f5-4a21-9a35-d801e2362e6f.mp4, boardid=23), heartCount=0)], hashtagImg=/imgs/hashtag.png, boardCount=64)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

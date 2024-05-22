@@ -1,0 +1,179 @@
+/* html{ scroll-behavior: smooth; } */
+.main{
+    grid-area:main;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.videoFeed{
+    width:450px;
+    height:780px;
+    display: flex;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.267);
+    border-radius: 5px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.RVideo{
+    width:450px; 
+    height:780px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.reelsMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-left: 10px;
+    text-align: center;
+}
+.reelsMenu1{width: 27px;}
+.Rsp1{font-size: 13px;}
+.reelsMenu2{width: 24px; margin-top: 25px;}
+.Rsp2{font-size: 12px;}
+.reelsMenu3{width: 25px; margin-top: 25px;}
+.reelsMenu4{width: 26px; margin-top: 25px;}
+.reelsMenu5{width: 18px; margin-top: 25px;}
+
+.reelsVideo{
+    position: relative;
+}
+.sound{
+    position: absolute;
+    top: 10px; right: 10px; 
+}
+.vol{
+    width: 30px;
+    height: 30px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(155, 155, 155, 0.459);
+    border-radius: 50%;
+    
+}
+
+.muteTrue{background-image:url('/imgs/volume.png');}
+.muteFalse{background-image:url('/imgs/mute.png');}
+.reelsContent{
+    position: absolute;
+    bottom: 0px; left: 0px; 
+    color: white; font-size: 24px;
+}
+.rcon-user{
+    display:flex;
+    /* background-color: rgb(255, 255, 255); */
+    width: 240px;
+}
+.rcfeesa{
+    width: 40px;
+    border-radius: 50%;
+}
+.rID{
+    font-size: 15px;
+    margin-top: 10px;
+    color: #ffffff;
+}
+.followBtn{
+    border: solid rgb(255, 255, 255) 1px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    width: auto;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.userBtn{display:flex; }
+.rcon-detail{
+    
+    width: 450px;
+    height: 100px;
+}
+.reelsPost{
+    font-size: 15px;
+    padding: 10px;
+}
+/* #RVideo::-webkit-media-controls {
+    visibility: hidden;
+} */
+/* #RVideo::-webkit-media-controls {
+    display: none;
+} */
+.RVideo::-webkit-media-controls {
+    opacity: 0;
+}
+
+
+#reelsMenuModalContainer{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top:0; /* 변경 가능한 값 */
+    left:0; /* 변경 가능한 값 */
+    width: 100vw;
+    height: 100vh;
+}
+#reelsMenuModalBody {
+    background-color: #ffffff;
+    width: 220px;
+    border-radius: 5px;
+    position: absolute;
+    top:70%;
+    left:78.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.267);
+    padding:5px;
+}
+/*#reelsOpenModalImg {
+    cursor: pointer;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}*/
+#reelsMenuModalBody button{padding:15px 0 15px 15px; cursor: pointer; border-radius: 5px; text-align:start;}
+#reelsMenuModalBody button:hover{cursor:pointer; background-color: rgb(221, 221, 221);}
+.blueFont {
+    color: rgb(92, 162, 241);
+}
+.redFont{color:red}
+
+.mf1 {
+    margin: 15px 0; /* Add vertical margin */
+}
+
+/* #reelsCloseModalBtn {
+    margin: 15px 0; /* Add vertical margin 
+}*/
+
+.line{
+    border-bottom: solid rgb(204, 201, 201) 1;
+    border-top: solid rgb(204, 201, 201) 1px;
+}
+.reelsModal-content button:hover {
+    background-color: rgba(228, 228, 228, 0.795);
+}
+
+
+.reelsMenu button{width:25px; height:25px; background-size:cover;}
+
+.heartOn{background-image:url('/imgs/pullht.png');}
+.heartOff{background-image:url('/imgs/ht.png');}
+.saveOn{background-image:url('/imgs/pullKeep.png');}
+.saveOff{background-image:url('/imgs/keep.png');}
+.reelsCommentButton{background-image:url('/imgs/chat.png');}
+.reelsDMButton{background-image:url('/imgs/dm2.png'); margin-bottom:12px;}
+.reelsMoreButton{background-image:url('/imgs/more.png'); margin:0; margin-top:12px;}
+.reelsMenuAreas{margin-bottom:15px;}
+
+.reelsMenu{align-items:center;}
+.Rsp1{width:50px;}
+.Rsp2{width:50px;}
+
+.reelsPost{max-height:25px; white-space:nowrap; overflow:hidden; text-overflow: ellipsis;}

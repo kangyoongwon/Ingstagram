@@ -1,0 +1,241 @@
+html, body, main{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    box-sizing:border-box;
+    vertical-align: baseline;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+}
+
+/* 왼쪽 네비게이션 바 */
+.navbar {
+    width: 10%; /* 네비게이션 바의 너비 */
+    height: 900px;
+    /* 배경색 */
+    padding: 20px 0; /* 위아래 패딩 */
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 아이템을 정렬 */
+    padding-right: 10%; /*글씨와 틀의 오른쪽 패딩 간격*/
+    position: fixed;
+    margin-left: 10px;
+    border-right: solid rgb(211, 210, 210) 1px;
+}
+
+#logo{
+    width: 120px;
+    margin-top:20px;
+    margin-left: 10px;
+}
+.menu{
+    display: inline-flex; /* 요소를 수평으로 나열하기 위해 inline-flex로 설정 */
+    align-items: center; /* 아이콘과 텍스트를 세로로 가운데 정렬 */
+    margin: 2%;
+    font-family: "Nanum Gothic", sans-serif;
+}
+.menu img {
+    margin-right: 5px; /* 이미지 우측 여백 추가 */
+    width: 50px;
+    cursor: pointer;
+}
+.menu span{
+    cursor: pointer;
+}
+.proff{
+    display: inline-flex;
+    border-radius: 70%;
+}
+
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    display: block; /* 링크를 블록 수준 요소로 변환하여 전체 너비를 차지하도록 함 */
+}
+
+.navbar a:hover {
+    background-color: #cec8c8; /* 호버 시 배경색 변경 */
+}
+/* 모달 */
+.navModal {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* 배경색상을 확인하세요 */
+    z-index: 1000;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.navModal-content {
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.267); /* 살짝의 그림자 효과 추가 */
+background-color: #f6f6f7;
+width: 220px;
+height: 300px;
+border-radius: 5px;
+position: absolute;
+padding:20px;
+left: 0; /* 왼쪽 정렬 */
+bottom: 0; /* 아래 정렬 */
+}
+#navOpenModal {
+cursor: pointer;
+}
+.navModal-content img{
+width: 25px;
+height: 25px;
+
+}
+.navModal-content span{
+font-size: 17px;
+font-family: "Nanum Gothic", sans-serif;
+cursor: pointer;
+
+}
+.navModal-content img,
+.navModal-content span {
+vertical-align: middle;
+}
+.navModal-content span:hover {
+background-color: lightgray; /* 마우스를 올렸을 때 변경할 배경색 */
+}
+
+/* 프로필 메인화면 */
+.proMain{
+    margin-left: 270px;
+}
+.proTop{
+    height: 680px;
+    display: flex;
+}
+.postCon{
+    width: 800px;
+    height: 600px;
+    margin-top: 40px;
+    margin-left: 25px;
+}
+
+/* 태그검색화면 css */
+#proMain2{
+    margin-left: 270px;
+}
+#proTop2{
+    height: 230px;
+    display: flex;
+}
+#postCon2 img{
+    width: 150px;
+    border-radius: 50%;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-right: 50px;
+}
+#postCon3{
+    width: 710px;
+}
+#t1{
+    font-size: 29px;
+    margin-bottom: 0;
+}
+#t2{
+    margin-bottom: 0;
+}
+#t3{
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 0;
+}
+#fBtn{
+    background-color: rgb(104, 167, 250);
+    width: 700px;
+    height: 35px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.proText2{
+    padding-left: 55px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #7a7a7a;
+    font-weight: bold;
+}
+.proMid2{
+    height: auto;
+    
+}
+/* 여기까지 */
+
+.proMid{
+    border-top: 1px solid rgb(189, 189, 189);
+    height: auto;
+    
+}
+main{
+    background-color: rgb(255, 255, 255);
+    display:flex; 
+    flex-direction:column; 
+    justify-content:center; 
+    align-items:center;
+    margin-top: 24px;
+    position: relative;
+}
+#gridContainer{
+    width:900px;
+}
+.divGrid{
+    display:grid; 
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:repeat(2, 1fr);  */
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 4px;
+    margin-top: 4px;
+}
+.divGrid div{
+    border:1px solid black;
+    width: 295px; /* 그리드 아이템의 너비를 200px로 고정합니다. */
+    height: 295px; /* 그리드 아이템의 높이를 200px로 고정합니다. */
+    box-sizing: border-box;
+}
+.proFoot{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* 다른 요소 위에 보이도록 설정 */
+    margin-top: 10px;
+}
+.proText{
+    padding-left: 55px;
+    margin-top: 50px;
+}
+
+.proText a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+.proText a:hover{
+    color: #b8b6b6;
+}
+.proText span{
+    font-size: 13px;
+    color: #7a7a7a;
+}
+button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+.logo a:hover{
+    background-color: rgba(255, 255, 255, 0);
+}

@@ -1,0 +1,19 @@
+#moreHottagMain{grid-area:main; display:grid; grid-template-rows: auto auto auto;}
+
+#todayHottag, #periodHottag, #yearlyAgeInterest{display:flex; flex-direction:column; align-items:center;}
+#todayHottag{}
+#periodHottag{}
+#yearlyAgeInterest{}
+
+#thShow, #phShow, #yaiShow{display:flex; align-items:center; flex-direction:column;}
+#moreHottagMain h2{margin-top:10vh;}
+.selector{margin:1vw 0 1vw 0;}
+.moreHottagWrapper{width:90%;}
+
+.imgCon{width:800px; height:500px; border:1px solid rgb(175, 175, 175); text-align:center; line-height:450px;}
+
+#phShow .imgCon, #yaiShow .imgCon{background-repeat:no-repeat; background-position:center;}
+
+.hottagButton{margin-bottom:1vw; border-radius:10px; border:0; background-color:rgb(65, 195, 255); color:white; font-weight:bold;}
+#yaiButton, #phButton{width:80px; height:30px;}
+#yaiDownload, #phDownload{width:150px; height:30px; display:none;}

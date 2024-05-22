@@ -1,0 +1,315 @@
+
+  .main_feed{
+    width:100%;
+    grid-area:main;
+    display:grid;
+    grid-template-columns:6.7fr 3.3fr;
+    grid-template-areas:'homeMainSection homeHottagSection';
+    /* width: 600px;
+    height: 2000px; */
+  }
+#homeMainSection{grid-area:homeMainSection; display:flex; flex-direction:column; align-items:center;}
+#homeHotTagSection{grid-area:homeHottagSection;}
+
+  .view{
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+    margin-top: 10px;
+    width: 450px;
+  }
+.one{
+    display: flex;
+    font-size: medium;
+    font-family: "Nanum Gothic", sans-serif;
+
+}
+.prof img{
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    flex-grow: 1;
+    cursor: pointer;
+}
+.proff img{
+    display: inline-flex;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    flex-grow: 1;
+}
+.one a{
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+
+}
+.font{
+    display: inline-flex;
+    margin-top: 15px;
+    font-weight: 700;
+    flex-grow: 1;
+}
+.font2{
+    font-weight: 400;
+}
+.onedot img{
+    width: 50px;
+    height: 50px;
+    margin-top: 4px;
+
+}
+.two img{
+    max-width: 100%;
+    height: auto;
+
+}
+.two video{
+  background-color: black;
+}
+.three{
+    display: flex;
+
+}
+.left{
+    flex-grow: 1;
+}
+.left img{
+    width: 25px;
+    margin: 10px;
+    cursor: pointer;
+
+}
+.right img{
+    width: 25px;
+    margin: 10px;
+    cursor: pointer;
+}
+.five a{
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.six,.seven, .coment{
+    color: gray;
+    margin: 5px;
+}
+.six{
+    cursor: pointer;
+    margin-right: 9px;
+}
+.box-comment {
+  margin: 15px 0 20px 15px;
+}
+.text-comment {
+  display: inline-block;
+
+  width: 350px;
+
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+.date-comment {
+
+  margin: 0 0 14px 0;
+  font-size: 12px;
+  color: #828282;
+}
+.img-heart-comment:hover,
+.img-delete-comment:hover {
+  cursor: pointer;
+}
+.img-delete-comment {
+  margin: 0 0 2px 10px;
+}
+
+.box-chat {
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+.input-chat {
+  width: 370px;
+  border: none;
+}
+.btn-chat {
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  color: rgb(0, 149, 246, 0.3);
+}
+.btn-chat-effect {
+  color: rgb(0, 149, 246, 1);
+}
+.btn-chat-effect:hover {
+  cursor: pointer;
+}
+
+
+  .right_feed{
+    /*grid-area:hottag;*/
+    position:fixed;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 25px;
+  }
+  .tag{
+    display: inline-flex;
+    font-size: 16px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    margin: 8px;
+
+  }
+  .tag img{
+    width: 30px;
+  }
+  .hot_tag img{
+    margin-right: 5px;
+
+  }
+  .tag a {
+    color: black;
+    text-decoration: none;
+    display: block;
+  }
+
+  .tag a:hover {
+    background-color: #cec8c8;
+  }
+  .plus{
+    display: inline-flex;
+    font-size: 16px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    margin: 8px;
+
+  }
+  .plus img{
+    width: 70px;
+  }
+  .plus a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin-top: 22px;
+  }
+
+  .plus a:hover {
+    background-color: #cec8c8;
+  }
+
+.fullContent {
+  display: none;
+}
+
+
+.summary.hide + .fullContent {
+  display: block;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+.toggleButton{
+  background: none;
+  border: none;
+  color: rgb(158, 158, 161);
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+
+}
+.commentHeartFalse{
+    width: 14px;
+    height: 14px;
+    background-image: url('/imgs/ht.png');
+    background-size: cover;
+    background-color:transparent;
+    border: none;
+    cursor: pointer;
+}
+.commentHeartTrue{
+    width: 14px;
+    height: 14px;
+    background-image: url('/imgs/pullht.png');
+    background-size: cover;
+    background-color:transparent;
+    border: none;
+    cursor: pointer;
+}
+.commentButton{
+  background: none;
+  border: none;
+  color: rgb(158, 158, 161);
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+
+}
+
+#footerImage{width:320px;}
+
+.slide{
+  width:100%;
+  max-width:600px;
+  margin:0 auto;
+
+}
+ .two .bx-pager{
+  position: absolute;
+  bottom: 18px !important;
+  border-radius: 2%;
+
+}
+.bx-wrapper .bx-prev, .bx-wrapper .bx-next {
+  z-index: 1;
+}
+.bx-wrapper{margin-bottom:0 !important;}
+
+.two .bx-prev, .two .bx-next{z-index:5 !important;}
+
+
+
+/* 댓글모두보기버튼
+.showAllComments{
+    cursor: pointer;
+    color: gray;
+    margin: 5px;
+}
+*/
+/* 하트, 댓글, 공유, 저장 버튼 */
+.heartFalse:hover img {
+    opacity: 0.7;
+}
+.savedFalse:hover img {
+    opacity: 0.7;
+}
+.homeCommentButton:hover img{
+    opacity: 0.7;
+}
+.sharePostButton:hover img{
+    opacity: 0.7;
+}
+.iconTextBox, .iconCancelTextBox {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 3px;
+    font-size: inherit;
+    border: 1px solid #ccc;
+    white-space: nowrap; /* 한 줄로 텍스트를 표시 */
+}
+.three button {
+    position: relative;
+}
+
+.box-comment a{text-decoration:none; color:black !important;}
+.box-comment a:hover{cursor:pointer}

@@ -1,0 +1,1595 @@
+html, body, main{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    box-sizing:border-box;
+    vertical-align: baseline;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+}
+
+/* 왼쪽 네비게이션 바 */
+.navbar {
+    width: 10%; /* 네비게이션 바의 너비 */
+    height: 900px;
+    /* 배경색 */
+    padding: 20px 0; /* 위아래 패딩 */
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 아이템을 정렬 */
+    padding-right: 10%; /*글씨와 틀의 오른쪽 패딩 간격*/
+    position: fixed;
+    margin-left: 10px;
+    border-right: solid rgb(211, 210, 210) 1px;
+}
+
+#logo{
+    width: 120px;
+    margin-top:20px;
+    margin-left: 10px;
+}
+.menu{
+    display: inline-flex; /* 요소를 수평으로 나열하기 위해 inline-flex로 설정 */
+    align-items: center; /* 아이콘과 텍스트를 세로로 가운데 정렬 */
+    margin: 2%;
+    font-family: "Nanum Gothic", sans-serif;
+}
+.menu img {
+    margin-right: 5px; /* 이미지 우측 여백 추가 */
+    width: 50px;
+    cursor: pointer;
+}
+.menu span{
+    cursor: pointer;
+}
+.proff img{
+    display: inline-flex;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    flex-grow: 1;
+}
+
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    display: block; /* 링크를 블록 수준 요소로 변환하여 전체 너비를 차지하도록 함 */
+}
+
+.navbar a:hover {
+    background-color: #cec8c8; /* 호버 시 배경색 변경 */
+}
+/* 모달 */
+.navModal {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* 배경색상을 확인하세요 */
+    z-index: 1000;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.navModal-content {
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.267); /* 살짝의 그림자 효과 추가 */
+background-color: #f6f6f7;
+width: 220px;
+height: 300px;
+border-radius: 5px;
+position: absolute;
+padding:20px;
+left: 0; /* 왼쪽 정렬 */
+bottom: 0; /* 아래 정렬 */
+/* display: inline-flex; */
+
+}
+
+#navOpenModal {
+cursor: pointer;
+}
+.navModal-content img{
+width: 25px;
+height: 25px;
+
+}
+.navModal-content span{
+font-size: 17px;
+font-family: "Nanum Gothic", sans-serif;
+cursor: pointer;
+
+}
+.navModal-content img,
+.navModal-content span {
+vertical-align: middle;
+}
+.navModal-content span:hover {
+background-color: lightgray; /* 마우스를 올렸을 때 변경할 배경색 */
+}
+
+/* 프로필 메인화면 */
+.proMain{
+    margin-left: 270px;
+}
+.proTop{
+    background-color: rgb(255, 255, 255);
+    height: 240px;
+    display: flex;
+}
+.proIcon img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    flex-grow: 1;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 40px;
+}
+.proContent{
+    background-color: rgb(255, 255, 255);
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+.con1{
+    background-color: rgb(255, 255, 255);
+    flex-grow: 2;
+    padding-left: 10px;
+    padding-top: 20px;
+    position: relative;
+}
+.con1 span{
+    font-size: 24px;
+    margin-right: 28px;
+}
+.probtn{
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #dfdfdf;
+}
+.probtn:hover{
+    background-color: #afafaf;
+}
+#setOpenModalImg{
+    margin-top: 8px;
+    height: 24px;
+    position: absolute;
+    cursor: pointer;
+}
+.con2{
+    background-color: rgb(255, 255, 255);
+    flex-grow: 1;
+    
+}
+.sp{
+    padding-left: 10px;
+}
+.con3{
+    background-color: rgb(255, 255, 255);
+    flex-grow: 2;
+    padding-left: 10px;
+}
+.con3 p{
+    font-size: small;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+.con3 span{
+    font-size: 15px;
+}
+.proMid{
+    border-top: 1px solid rgb(189, 189, 189);
+    height: auto;
+    
+}
+.content {
+    background-color: rgb(255, 255, 255);
+    display: none;
+    flex-direction:column; 
+    justify-content:center; 
+    align-items:center;
+    margin-top: 24px;
+    position: relative;
+}
+.content.active{
+    display: block;
+}
+#proGridContainer{
+    width:900px;
+}
+.divGrid{
+    display:grid; 
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:repeat(2, 1fr);  */
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 4px;
+    margin-top: 4px;
+}
+.divGrid div{
+    border: 1px solid black;
+    width: 295px; /* 그리드 아이템의 너비를 200px로 고정합니다. */
+    height: 295px; /* 그리드 아이템의 높이를 200px로 고정합니다. */
+    box-sizing: border-box;
+}
+.divGrid img{ width: 293px; height: 293px;}
+.divGrid video { width: 100%; height: 100%;}
+.proFoot{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* 다른 요소 위에 보이도록 설정 */
+    margin-top: 10px;
+}
+.promenu{
+    padding-left: 190px;
+}
+.promenu button{
+    border: none;
+    cursor: pointer;
+    margin-left: 80px;
+    margin-top: 5px;
+    
+}
+.spankeep{
+    font-size: 13px;
+    color: #7a7a7a;
+    margin-left: 55px;
+}
+/* 설정버튼 모달  */
+.setModal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.setModal-content {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 300px auto;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* Center-align text */
+    line-height: 1.5; /* Add spacing between lines */
+    cursor: pointer;
+    font-family: "Nanum Gothic", sans-serif;
+}
+#setOpenModalImg {
+    cursor: pointer;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+.redfont {
+    margin: 15px 0; /* Add vertical margin */
+}
+
+.mf1 {
+    margin: 15px 0; /* Add vertical margin */
+}
+
+#setCloseModalBtn {
+    margin: 15px 0; /* Add vertical margin */
+}
+.line{
+    border-bottom: solid rgb(204, 201, 201) 1;
+    border-top: solid rgb(204, 201, 201) 1px;
+}
+button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+.logo a:hover{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* ----------------------- 프사 변경 -----------------------*/
+#profilePhotoForm{display:none}
+
+.editProfilePhotoModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 배경 투명도 */
+    z-index: 9998; /* 설정 모달 보다 낮은 z-index */
+}
+/* 프사 변경 모달창 */
+.editProfilePhotoContent {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 300px auto;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* Center-align text */
+    line-height: 1.5; /* Add spacing between lines */
+    cursor: pointer;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+#photoSetting1{
+    color: black;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: 550;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    font-family: inherit;
+    padding: 12px 0;
+    position: relative;
+    text-align: center;
+    line-height: 1.5;
+}
+#photoSetting2{
+    color: rgb(0, 149, 246);
+    cursor: pointer;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    margin: 0;
+    min-height: 48px;
+    padding: 4px 8px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+#photoSetting3{
+    color: rgb(237, 73, 86);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    margin: 0;
+    min-height: 48px;
+    padding: 4px 8px;
+    text-align: center;
+    justify-content: center;
+}
+#photoSetting4{
+    color: #8a8181;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    margin: 0;
+    min-height: 48px;
+    padding: 4px 8px;
+    text-align: center;
+    justify-content: center;
+}
+
+/*----------------------- 프로필 변경 모달창 -----------------------*/
+/* 프로필 컨테이너 */
+.editProfileInfoModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #edf2f7; /* 약간의 흰색에 가까운 하늘색 배경 이색이랑 고민중 #e9f0f0 #ecf3ff*/
+    border-radius: 20px; /* 둥근 모서리 */
+    padding: 30px;
+    z-index: 9999;
+    width: 500px; /* 창 사이즈 조정 */
+    height: 430px; /* 창 사이즈 조정 */
+}
+
+/* 프로필 정보 */
+.editProfileInfoContent {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* 프로필 사진 크기 */
+.profilePicture{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* 원형 프로필 사진 */
+}
+/* 프로필 사진 */
+.editBoxPhoto {
+    margin-bottom: 10px; /* 프로필 사진과 다른 요소 사이의 여백 */
+    margin-top: 20px;
+}
+.userInfo{
+    margin-bottom: 10px;
+}
+/* 사용자 이름 */
+.editBoxUsername {
+    font-weight: 550;
+    font-size: 17px;
+}
+/* Instagram 텍스트 */
+.oIngstagram {
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+/* 버튼 컨테이너 */
+.editProfileButtonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* 수평 가운데 정렬 */
+    border-radius: 20px; /* 둥근 모서리 */
+    padding: 10px; /* 내부 여백 */
+    width: 100%; /* 부모 요소 너비에 맞춤 */
+    box-sizing: border-box; /* 패딩 및 테두리 크기 포함 */
+}
+
+/* 변경 버튼 */
+.editProfileButtonContainer button {
+    width: 100%; /* 버튼을 컨테이너의 너비에 맞춤 */
+    flex: 1; /* 동일한 너비를 가지도록 설정 */
+    position: relative; /* 상대 위치 설정 */
+    display: flex; /* 버튼 내부 요소를 정렬하기 위해 필요 */
+    text-align: left; /* 왼쪽 정렬 */
+    background-color: #ffffff;
+    border-radius: 15px; /* 둥근 모서리 */
+    border: none; /* 테두리 제거 */
+    padding: 15px; /* 버튼 내부 여백 */
+    margin-bottom: 10px; /* 버튼 간의 여백 증가 */
+    color: #1c2b33;
+    font-family: sans-serif;
+    font-size: 16px;
+    cursor: pointer; /* 커서 모양 */
+
+    transition: box-shadow 0.3s ease; /* 호버 시 트랜지션 효과를 적용합니다. */
+}
+/* > 표식 */
+.editProfileButtonContainer button::after {
+    content: ">"; /* 표식으로 > 추가 */
+    position: absolute; /* 절대 위치 설정 */
+    top: 50%; /* 상단 여백 조정 */
+    font-family: inherit;
+    font-weight: 550;
+    right: 10px; /* 우측 여백 조정 */
+    transform: translateY(-50%); /* 수직 정렬 */
+    font-size: 18px; /* 표식의 크기 설정 */
+}
+.editProfileButtonContainer button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 호버 시 살짝 후광 그림자 효과를 줍니다. */
+}
+
+/* X 버튼 */
+.closeUserInfoButton {
+    position: absolute;
+    top: 10px; /* 모달 상단으로부터의 여백 조정 */
+    right: 10px; /* 모달 우측으로부터의 여백 조정 */
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* 버튼 색상 */
+    border-radius: 50%; /* 동그란 모양 */
+    background-color: transparent; /* 배경색 투명 */
+    cursor: pointer; /* 커서 모양 */
+}
+
+/* X 버튼 호버 효과 */
+.closeUserInfoButton:hover {
+    color: #000; /* 호버 시 버튼 색상 변경 */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* 그림자 #c4e3ff */
+}
+
+/* 모달 스타일 */
+.userInfoBoxModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.5); /* 반투명한 배경 */
+    z-index: 9998; /* 다른 요소 위에 나타나도록 설정 */
+}
+
+/*----------------------- 이름 변경 모달 -----------------------*/
+.editNameModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #edf2f7;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 430px;
+    z-index: 10000;
+}
+
+/* 이름 변경 모달 헤더 */
+.selectToChangeName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 뒤로가기, 닫기 버튼 */
+.backToEditButton,
+.closeEditModalButton {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 이름 변경 모달 내용 */
+.editNameModalContent {
+    margin-bottom: 20px;
+}
+
+/* 모달 내용 설명 */
+.editNameModalDescription {
+    margin-bottom: 20px;
+}
+
+/* 제목 */
+.editNameTitle {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* 사용자 이름 라벨 */
+.userNameLabel {
+    color: #666;
+    position: absolute; /* 절대 위치 */
+    transform: translateY(-50%); /* 수직 정렬 */
+    pointer-events: none; /* 이벤트 방지 */
+    white-space: nowrap;
+    margin-top: 3px;
+}
+
+/* 안내문구 */
+.editNameNote {
+    font-size: 14px; /* 작은 폰트 사이즈 */
+    color: #666;
+    margin-top: 2px; /* editNameNote 위 여백 */
+    margin-bottom: 50px;
+    clear: both;
+}
+
+/* 이름 입력 컨테이너 */
+.EditNameContainer {
+    position: relative;
+}
+
+.editNameInput.placeholder {
+    color: gray; /* 회색으로 표시 */
+}
+
+/* 이름 입력 필드 */
+.editNameInput {
+    width: calc(100% - 32px);
+    height: 30px; /* 높이 조정 */
+    padding: 15px; /* 큰 패딩 */
+    border: 1px solid #ccc; /* 실선 테두리 */
+    outline: none; /* 포커스 시 테두리 제거 */
+    border-radius: 10px; /* 라운드된 테두리 */
+    margin-bottom: 20px;
+    font-size: 16px; /* 큰 폰트 사이즈 */
+    position: relative;
+}
+/* 텍스트 박스에 마우스 클릭 시 테두리 색상 변경 */
+.editNameInput:focus {
+    border-color: #082443; /* 파란색 */
+}
+
+/* 이름 변경 완료 버튼 */
+.editNameSubmitButton {
+    padding: 15px 0; /* 큰 패딩 */
+    background-color: #0064e0; /* 파란색 배경 */
+    width: 100%; /* 텍스트 박스의 너비에 맞게 조정 */
+    color: white;
+    border: none;
+    border-radius: 30px; /* 라운드된 테두리 */
+    cursor: pointer;
+    font-size: 18px; /* 큰 폰트 사이즈 */
+    float: right; /* 우측 정렬 */
+    margin-top: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/* 비활성화된 완료 버튼 */
+.editNameSubmitButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 텍스트 박스 오른쪽에 있는 X 버튼 */
+.clearInputButton {
+    top: 40%;
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+}
+
+/* 마우스 호버 시 X 버튼 색상 변경 */
+.EditNameContainer:hover .clearInputButton {
+    color: #666;
+}
+
+.editNameInputContainer{
+  position: relative;
+}
+
+/* 이름 입력 필드에 포커스가 있는 경우 */
+.editNameInput:focus + .userNameLabel,
+.editNameInput:not(:placeholder-shown) + .userNameLabel {
+    font-size: 12px; /* 작은 폰트 사이즈 */
+    top: 0; /* 이름 플레이스홀더 텍스트를 텍스트 상자 위에 이동 */
+    transform: translateY(0); /* 수직 정렬 */
+    left: 15px; /* 왼쪽 패딩과 일치 */
+}
+
+.editNameInput:hover {
+    border-color: #082443;
+}
+
+.backToEditButton:hover,
+.closeEditModalButton:hover {
+    position: relative;
+}
+
+.backToEditButton:hover::before,
+.closeEditModalButton:hover::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/*----------------------- 사용자 이름 변경 모달 -----------------------*/
+.editUsernameModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #edf2f7;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 430px;
+    z-index: 10000;
+}
+
+/* 사용자 이름 변경 모달 헤더 */
+.selectToChangeUsername {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 사용자 이름 변경 모달 내용 설명 */
+.editUsernameModalDescription {
+    margin-bottom: 20px;
+}
+
+/* 제목 */
+.editUsernameTitle {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* 안내문구 + 텍스트박스 컨테이너 */
+.editUsernameContainer {
+    position: relative;
+}
+
+/* 안내문구 */
+.editUsernameNote {
+    font-size: 16px;
+    color: #666;
+    margin-top: 2px;
+    margin-bottom: 30px;
+    clear: both;
+}
+
+/* 사용자 이름 입력 컨테이너 */
+.editUsernameInputContainer{
+  position: relative;
+}
+
+/* 사용자 이름 입력 필드 */
+.editUsernameInput {
+    width: calc(100% - 32px);
+    height: 30px; /* 높이 조정 */
+    padding: 15px; /* 큰 패딩 */
+    border: 1px solid #ccc; /* 실선 테두리 */
+    outline: none; /* 포커스 시 테두리 제거 */
+    border-radius: 10px; /* 라운드된 테두리 */
+    margin-bottom: 20px;
+    font-size: 16px; /* 큰 폰트 사이즈 */
+    position: relative;
+}
+
+.editUsernameInput:hover, .editUsernameInput:focus{
+    border-color: #082443;
+}
+
+/* 입력 필드의 placeholder */
+.editUsernameInput::placeholder {
+    color: #c40023; /* placeholder의 색상을 빨간색으로 설정 */
+}
+
+/* 유저네임 라벨 */
+.usernameTag {
+    font-size: 12px;
+    top: 0;
+    left: 15px;
+    color: #666;
+    position: absolute; /* 절대 위치 */
+    transform: translateY(0); /* 수직 정렬 */
+    pointer-events: none; /* 이벤트 방지 */
+    white-space: nowrap;
+    margin-top: 3.5px;
+}
+
+/* 텍스트 박스 오른쪽에 있는 X 버튼 */
+.clearUsernameInputButton{
+    top: 40%;
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+}
+
+/* 마우스 호버 시 X 버튼 색상 변경 */
+.editUsernameInputContainer:hover .clearInputButton {
+    color: #666;
+}
+
+/* 유효성 검사 실패할 경우 메세지 */
+.editWarning{
+    font-size: 12px;
+    color: #c20023;
+    margin-top: 0.5px;
+    margin-bottom: 30px;
+    clear: both;
+    display: none;
+}
+
+/* 사용자 이름 변경 완료 버튼 */
+.editUsernameSubmitButton {
+    padding: 15px 0;
+    background-color: #0064e0; /* 파란색 배경 */
+    width: 100%; /* 텍스트 박스의 너비에 맞게 조정 */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    float: right;
+    margin-top: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/* 비활성화된 완료 버튼 */
+.editUsernameSubmitButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/*유효성검사아이콘
+.vSuccess img{
+    display:none;
+    top: 40%;
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    cursor: pointer;
+}
+.vFail img{
+    display:none;
+    top: 40%;
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    cursor: pointer;
+}
+*/
+/*----------------------- 프사 변경 모달 -----------------------*/
+.editPhotoModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #edf2f7;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 430px;
+    z-index: 10000;
+}
+
+/* 사용자 이름 변경 모달 헤더 */
+.selectToChangePhoto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 제목 */
+.editPhotoTitle {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.editPhotoContainer {
+    position: relative;
+    text-align: center;
+}
+
+/* 프사 */
+.editPhotoNote img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+/* 프사 변경 버튼 */
+.editPhotoSubmitButton {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    transition: box-shadow 0.3s ease;
+}
+.editPhotoSubmitButton:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 호버 시 그림자 효과 추가 */
+}
+
+#editProfilePhotoForm{display:none}
+
+/*----------------------- 소개 변경 모달 -----------------------*/
+.editBioModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #edf2f7;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 430px;
+    z-index: 10000;
+}
+
+.selectToChangeBio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 제목 */
+.editBioTitle {
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.editBioContainer {
+    position: relative;
+}
+
+.editBioInputContainer{
+  position: relative;
+  padding-right: 10px;
+}
+
+.editBioInput {
+    width: calc(100% - 32px);
+    height: 150px; /* 높이 조정 */
+    padding: 15px; /* 큰 패딩 */
+    border: 1px solid #ccc; /* 실선 테두리 */
+    outline: none; /* 포커스 시 테두리 제거 */
+    border-radius: 10px; /* 라운드된 테두리 */
+    margin-bottom: 20px;
+    font-size: 16px; /* 큰 폰트 사이즈 */
+    position: relative;
+    resize: none;
+}
+
+.editBioInput::placeholder {
+    color: gray;
+}
+
+.clearBioInputButton{
+    top: 4%;
+    position: absolute;
+    margin-right: 6px;
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+}
+
+.bioCounter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #999;
+}
+
+.editBioInputContainer:hover .clearBioInputButton {
+    color: #666;
+}
+
+.editBioWarning{
+    font-size: 12px;
+    color: #c20023;
+    margin-top: 0.5px;
+    margin-bottom: 30px;
+    clear: both;
+    display: none;
+}
+
+.editBioSubmitButton {
+    padding: 15px 0;
+    background-color: #0064e0;
+    width: 100%;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    float: right;
+    margin-top: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/* 비활성화된 완료 버튼 */
+.editBioSubmitButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+/*----------------------- 설정 모달 -----------------------*/
+.editSettingModal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #edf2f7;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 430px;
+    z-index: 10000;
+}
+
+.selectToChangeSetting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.closeEditSettingButton{
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* 제목 */
+.editSettingTitle{
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.editSettingContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 각 컨테이너 사이의 간격 설정 */
+}
+
+.editActivateContainer,
+.editBlockContainer,
+.editPrivateInfoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 투명한 실선 추가 */
+    padding-bottom: 10px; /* 하단 간격 추가 */
+}
+
+.editActivateTitle,
+.editBlockTitle,
+.privateInfo {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.editBlockAccount,
+.editPrivateInfo{
+    font-size: 15px;
+    color: rgb(0, 149, 246);
+}
+
+.editActivateState {
+    display: flex;
+}
+.editPrivateInfo{
+    margin-right: auto;
+}
+.accountStatus {
+    margin-right: auto;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.accountToggle{
+    margin-left: auto;
+}
+
+/* 이미지 크기 조정 */
+.accountToggle img {
+    width: 38px; /* 이미지 너비 조정 */
+    height: auto; /* 높이 자동 조정 */
+}
+
+.closeEditSettingButton:hover {
+    position: relative;
+}
+
+.closeEditSettingButton:hover::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* 설정 변경 완료 버튼 */
+.editSettingSubmitButton{
+    margin-left: auto;
+    padding: 8px;
+    background-color: #0064e0;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+/* 비활성화된 완료 버튼 */
+.editSettingSubmitButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/*----------------------- 비공개/공개 전환 여부 모달 -----------------------*/
+.accountStateModal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #edf2f7;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 430px;
+    z-index: 10000;
+}
+.selectToChangeState{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* 투명한 실선 추가 */
+    width: 100%;
+    height: 80%;
+    margin-top: 10px;
+}
+.decideToChangeContainer{
+    display: flex;
+    width: 100%;
+    height: 20%
+}
+.askAboutOpinion{
+    font-weight: 430;
+    margin-bottom: 50px;
+    font-size: 24px;
+}
+.editStateNote{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.submitToChangeAccountState, .cancelToChangeAccountState{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 17px;
+    flex: 1;
+    width: 100%;
+}
+
+.submitToChangeAccountState{
+    color: rgb(0, 149, 246);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cancelToChangeAccountState {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.submitToChangeAccountState:hover, .cancelToChangeAccountState:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/*----------------------- 차단 유저 모달 -----------------------*/
+.blockedAccountModal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #edf2f7;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 430px;
+    z-index: 10000;
+}
+.selectBlockedUser{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.backToEditSettingButton,
+.closeEditBlockedUserModalButton{
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+.blockedAccountModalDescription{
+    display: flex;
+    flex-direction: column;
+}
+.blockedTitle{
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+.blockedStateNote{
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: gray;
+}
+.blockedUserList{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.noBlockedUser{
+    font-size: 13px;
+    color: rgba(128, 128, 128, 0.8);
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 160px;
+}
+.blockedUserPhoto img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.blockedUsernameContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blockedUsername{
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+.blockedName{
+    font-size: 12px;
+    text-align: center;
+}
+.cancelToBlockUser{
+    font-size: 14px;
+    border: none;
+    font-weight: 540;
+    border-radius: 12px;
+    background-color: rgba(169, 169, 169, 0.2);
+    cursor: pointer;
+    padding: 7px 13px;
+    margin-left: auto;
+}
+
+.cancelToBlockUser:hover {
+    background-color: rgba(169, 169, 169, 0.4);
+}
+
+.backToEditSettingButton:hover,
+.closeEditBlockedUserModalButton:hover {
+    position: relative;
+}
+
+.backToEditSettingButton:hover::before,
+.closeEditBlockedUserModalButton:hover::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+/*----------------------- 내가 본 상대방 프로필창(차단 안당했을 경우)-----------------------*/
+.privateContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.privateAccountContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.privateAccountPhoto img{
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+.privateAccountNote{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    gap: 8px;
+}
+
+.privateNote1{
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 6px;
+    text-align: left;
+}
+
+.privateNote2{
+    font-size: 14px;
+    text-align: center;
+    color: gray;
+}
+
+.beforeFollowing{
+    background-color: rgb(0, 149, 246);
+    color: white;
+    font-size: 14px;
+    border: none;
+    font-weight: 560;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 7px 17px;
+}
+.beforeFollowing:hover {
+    background-color: rgb(24, 119, 242);
+}
+.waitingForFollow{
+    background-color: rgba(169, 169, 169, 0.23);
+    font-size: 14px;
+    border: none;
+    font-weight: 560;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 7px 17px;
+}
+.waitingForFollow:hover {
+    background-color: rgba(169, 169, 169, 0.4);
+}
+/*****************************************************/
+.followingRequested{background-color:rgba(169, 169, 169, 0.23);}
+.followingRequested:hover {
+    background-color: rgba(169, 169, 169, 0.4);
+}
+.followingRequested,
+.unfollowButton,
+.followButton,
+.unBlockedButton{
+    width: 95px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 550;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.unfollowButton{
+    background-color: #dfdfdf;
+}
+.unfollowButton:hover{
+    background-color: #afafaf;
+}
+.followButton, .unBlockedButton{
+    background-color: rgb(0, 149, 246);
+    color: white;
+}
+.followButton:hover, .unBlockedButton:hover{
+    background-color: rgb(24, 119, 242);
+}
+.otherUserSetting img{
+    width: 50px;
+    height: 50px;
+    margin-right: 40px;
+    top: 18px;
+    right: 15px;
+    position: relative;
+}
+/*----------------------- 내가 본 상대방 프로필창(차단 당했을 경우) -----------------------*/
+.missingPathByBlockingNote{
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 195px;
+}
+.missingPathTitle{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.uShouldGoToHome{
+    font-size: 16px;
+    color: #666;
+    font-weight: 580;
+    margin-bottom: 500px;
+}
+.linkToIngstagram{
+    color: #00f;
+    text-decoration: none;
+}
+.linkToIngstagram:hover {
+    color: #800080; /* 클릭한 후 보라색으로 변경 */
+}
+/*----------------------- 다른 유저 설정 모달창 -----------------------*/
+.otherUserModal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+.otherUserOptions {
+    background-color: #fff;
+    max-width: 300px;
+    margin: 300px auto;
+    border-radius: 10px;
+    font-size: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+    cursor: pointer;
+    font-family: "Nanum Gothic", sans-serif;
+    border-top: 1px solid #ccc;
+}
+.blockOtherUserOption, .unBlockOtherUserOption{
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.otherUserOptions button {
+    padding: 10px 20px;
+}
+/*----------------------- <차단 질문 모달> -----------------------*/
+.askForBlockModal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+.blockOtherUserContainer{
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 420px;
+    margin: 300px auto;
+    font-size: 20px;
+    line-height: 1.0;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: "Nanum Gothic", sans-serif;
+    border-top: 0.8px solid #ccc;
+}
+
+.blockOtherUserContainer button {
+    padding: 10px 20px;
+}
+.blockOtherUserNote1{
+    font-size: 20px;
+    font-weight: 599;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+.blockOtherUserNote2{
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.blockOtherUser, .unBlockOtherUser{
+    color: #ff0000;
+    font-weight: bold;
+}
+
+
+/*----------------------- <차단 확답 모달> -----------------------*/
+.blockAlertModal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+.blockAlertContainer{
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 420px;
+    margin: 300px auto;
+    font-size: 20px;
+    line-height: 1.0;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: "Nanum Gothic", sans-serif;
+    border-top: 0.8px solid #ccc;
+}
+.blockAlertNote1{
+    font-size: 20px;
+    font-weight: 599;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+.blockAlertNote2{
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.closeBlockAlert{
+    padding: 10px 20px;
+    font-weight: 520;
+}

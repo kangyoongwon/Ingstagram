@@ -1,0 +1,144 @@
+ #searchModal h2, #searchRecordHead .middle{margin-left:10px;}
+.sm {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 7%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  /* 모달 내용 */
+  .searchModal-content {
+    /* margin-left:10px; */
+    background-color: #fefefe;
+    border: 1px solid #dddcdc;
+    width: 26%;
+    height: 100%;
+    border-top-left-radius: 0; /* 왼쪽 위 모서리는 둥글게 하지 않음 */
+    border-bottom-left-radius: 0; /* 왼쪽 아래 모서리는 둥글게 하지 않음 */
+    border-top-right-radius: 15px; /* 오른쪽 위 모서리만 둥글게 설정 */
+    border-bottom-right-radius: 15px; /* 오른쪽 아래 모서리만 둥글게 설정 */
+    overflow-y: auto;
+  }
+
+  /* 닫기 버튼 */
+  .searchClose {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .searchClose:hover,
+  .searchClose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* 검색창 컨테이너 스타일 */
+.search-container {
+
+    position: relative;
+    width: 300px;
+    margin: 30px auto;
+
+  }
+
+  /* 검색 입력 필드 스타일 */
+  #searchInput {
+    width: calc(100% - 40px); /* x 버튼 고려한 폭 조정 */
+    padding: 10px;
+    border: none;
+    background-color: #e9e8e8; /* 연한 회색 배경색 */
+    border-radius: 5px; /* 둥근 모서리 */
+    outline: none;
+
+  }
+
+  /* 취소 버튼 컨테이너 스타일 */
+  .cancel-btn-container {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #dbd8d8; /* 동그란 배경색 */
+    border-radius: 50%; /* 동그란 모양 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 취소 버튼 스타일 */
+  .cancel-btn {
+    color: #333; /* 짙은 회색 */
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .middle{
+    font-weight: bold;
+    padding-top: 20px;
+  }
+
+
+#shirinkedNavbar {
+    position:absolute;
+    top:0;
+    left:0;
+    width: 7%; /* 네비게이션 바의 너비 */
+    height: 100%;
+        /* 배경색 */
+    /* padding: 20px 0; 위아래 패딩 */
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 아이템을 정렬 */
+    /* position: fixed; */
+    /* margin-left: 10px; */
+    border-right: solid rgb(177, 175, 175) 1px;
+    background-color:white;
+}
+#shirinkedLogo{
+    background-image:url('../imgs/insta.png') ;
+}
+
+.shirinkedNavIcon{background-repeat:no-repeat; width:50px; height:50px; margin:2%; background-size:cover; background-color:transparent; margin-bottom:9px; border:0;}
+#shirinkedHomeButton{background-image:url('../imgs/home.png') !important;}
+#shirinkedSearchButton{background-image:url('../imgs/search.png');}
+#shirinkedExploreButton{background-image:url('../imgs/tam.png');}
+#shirinkedReelsButton{background-image:url('../imgs/reels.png');}
+#shirinkedMessageButton{background-image:url('../imgs/dm.png');}
+#shirinkedAlarmButton{background-image:url('../imgs/heart.png');}
+#shirinkedMakesNewButton{background-image:url('../imgs/make.png');}
+#shirinkedProfileButton{background-image:url('../imgs/feesa.png');}
+#shirinkedNavMenuButton{background-image:url('../imgs/list.png'); margin:0;}
+#shirinkedProfileButton{width:35px; height:35px; border-radius:50%;}
+
+.ash2{margin-left:20px;}
+.ash4{margin-left:20px;}
+
+
+
+#deleteAll{display:none; color:rgb(53, 174, 255); font-weight:bold; margin-left:95px; font-size:15px;}
+
+.searchMainGrid{width:100%; height:60px; display:grid; grid-template-columns:70px auto 40px; border:0; margin:0; padding:0; background-color:transparent;}
+.searchMainGrid img{width:40px; height:40px; border-radius:50%; border:0; justify-self:center; align-self:center;}
+.searchMainInfo{height:100%; display:flex; flex-direction:column; justify-content:center; align-items:flex-start;}
+.xArea{align-self:center; justify-self:start; font-size:20px}
+.xArea:hover, #AllDelete:hover{cursor:pointer;}
+
+
+#searchRecordBody{margin-top:10px; overflow-y:auto;}
+#searchNew{overflow-y:auto; display:none;}
+.smNothing{
+    font-size: small;
+    color: #868585;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding-top: 80%;
+}

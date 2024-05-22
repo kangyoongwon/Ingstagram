@@ -1,0 +1,51 @@
+#shareModalContainer{    
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top:0; /* 변경 가능한 값 */
+    left:0; /* 변경 가능한 값 */
+    width: 100vw;
+    height: 100vh;
+}
+
+#shareModalBody {
+    position:relative;
+    background-color: #ffffff;
+    width: 300px;
+    height:580px;
+    border-radius: 10px;
+    position: absolute;
+    top:12%;
+    left:55%; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.267);
+    display:grid;
+    /*grid-template-rows:60px 100px auto 60px;*/
+    grid-template-rows:60px minmax(30px, auto) minmax(350px, 430px) 60px;
+    grid-template-areas: 'head''search''result''foot';
+}
+#closeShareModal{position:absolute; font-size:30px; top:1.5%; left:2%;}
+
+#shareModalHead{grid-area:head; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:15px;;}
+
+#shareModalSearch{display:grid; grid-template-columns:110px 170px; border-bottom:1px solid rgb(175, 175, 175); overflow-y:auto;}
+/*#shareModalSearch button{display:block; margin-bottom:2px;}*/
+#shareModalSearch span{margin:0 20px 0 20px; font-weight:bold; font-size:15px;}
+/* #sharModalSearch div{align-self:end;} */
+/*#shareModalSearch input{width:100%; border:0;}*/
+#shareModalSearch>div{width:150px;}
+#shareModalSearch input{width:150px; border:0; margin-bottom:5px;}
+#shareModalSearch input:focus{outline:none}
+
+/*.foundTargetButton{background-color:rgb(53, 174, 255); border-radius:10px; color:white;}*/
+.foundTargetButton{background-color:rgb(53, 174, 255); border-radius:10px; color:white; margin-bottom:5px;}
+
+
+
+
+#shareModalResult{grid-area:result; margin-top:10px; overflow-y:auto;}
+.shareResultGrid{width:100%; height:50px; display:grid; grid-template-columns:70px auto; border:0; margin:0; padding:0; background-color:transparent;}
+.shareResultGrid img{width:40px; height:40px; border-radius:50%; border:0; justify-self:center; align-self:center;}
+.shareResultInfo{height:100%; display:flex; flex-direction:column; justify-content:center; align-items:flex-start;}
+
+#shareModalFoot{grid-area:foot; display:flex; justify-content:center; align-items:center;}
+#sendShareButton{width:250px; height:35px;border-radius:10px; background-color:rgb(224, 224, 224); color:white; border:0; font-weight:bold;}

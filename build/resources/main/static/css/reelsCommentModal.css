@@ -1,0 +1,45 @@
+#reelsCommentModalContainer{display:none;}
+#reelsCommentModalContainer{position:fixed; top:0; left:0; border:0; margin:0; padding:0; width:100vw; height:100vh; z-index:10;}
+#reelsCommentModalBody{position:absolute; top:15%; left:55%; width:300px; height:500px; background-color:white; border-radius:10px; display:grid; grid-template-rows:60px 380px 60px;grid-template-areas:'head' 'body' 'foot'; z-index:10; box-shadow:0 0 20px rgba(0, 0, 0, 0.267);}
+
+#reelsCommentModalContainer a{text-decoration:none; color:black;}
+.contentArea a:nth-of-type(2), .contentArea a:nth-of-type(3), .contentArea a:nth-of-type(4){font-size:12px;}
+
+#reelsCommentHead{grid-area:head; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:15px;}
+#content2{grid-area:body; overflow-y:auto; font-size:13px;}
+
+.profileButton{width:30px; height:30px; border-radius:50%; margin-left:15px; margin-right:10px; background-size:cover;}
+
+.contentGrid{display:grid; grid-template-columns:50px 200px 30px; grid-template-areas:'profileArea contentArea heartArea';}
+
+.profileArea{grid-area:profileArea;  padding-top:12px;}
+.contentArea{width:180px; grid-area:contentArea; word-wrap:break-word; padding-top:12px;}
+.heartArea{grid-area:heartArea; padding-top:30px;}
+.heartButton{border:0; width:12px; height:12px; background-repeat:no-repeat; background-size:cover; background-color:transparent; display:flex; justify-content:center;}
+
+.reply{display:grid; grid-template-columns:50px 150px 30px; grid-template-areas:'profileArea contentArea heartArea';}
+.reContent{width:130px; grid-area:contentArea; background-color:white; word-wrap:break-word; padding-top:12px;}
+
+.commentMenuButton{background-image:url('/imgs/dot.png'); background-size:cover; background-color:transparent; width:30px; height:20px; border:0;}
+
+.replyContainer{display:none; margin-left:50px;}
+.closeReply{display:none;}
+
+.time, .likes, .writeReply, .openReply, .closeReply {font-size:12px; color:gray;}
+
+/* .muteTrue{background-image:url('/imgs/mute.png')}
+.muteFalse{background-image:url('/imgs/volume.png')} */
+.heartOn{background-image:url('/imgs/pullht.png');}
+.heartOff{background-image:url('/imgs/ht.png');}
+.saveOn{background-image:url('/imgs/pullKeep.png');}
+.saveOff{background-image:url('/imgs/keep.png');}
+
+#content5{grid-area:foot; border-radius:10px; display:flex; justify-content:center; align-items:center;}
+#reelsCommentWrite{display:grid; grid-template-columns:0.8fr 8fr 1.2fr; border:1px solid rgb(182, 182, 182); border-radius:20px; width:250px;}
+#reelsCommentWrite img{width:30px; height:30px; border-radius:50%; align-self:center; justify-self:center;}
+#reelsCommentWrite textarea{resize:none; overflow-y: scroll; align-content:center; border:0}
+#reelsCommentWrite textarea:focus{outline:none;}
+#reelsCommentWrite a{align-self:center; justify-self:center; font-size:13px; font-weight:bold; color:rgb(53, 174, 255); display:none}
+#closeReelsCommentModal{font-size:30px; background-color:transparent; border:0;}
+
+#closeReelsCommentModal{position:absolute; top:12px;}
